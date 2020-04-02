@@ -1,4 +1,4 @@
-#  ganart: generative adversalial networks to paint Magic: the Gathering art
+#  GANART: generative adversalial networks to paint Magic: the Gathering art
 
 Dataset not provided for legal reasons. Example in this file are results of GANs trained on MtG basic lands illustrations.
 
