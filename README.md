@@ -12,7 +12,7 @@ Simple GAN composed of two perceptrons.
 
 <img src=".images/five-linear.png" width="1300">
 
-## GANART
+## GANART (wip)
 Deep Convolutional Generative Adversarial Network (DCGANs)
 
 <img src=".images/16.png" width="432">
