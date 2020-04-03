@@ -4,7 +4,6 @@ import errno
 import torchvision.utils as vutils
 from tensorboardX import SummaryWriter
 from IPython import display
-from matplotlib import pyplot as plt
 import torch
 
 '''
@@ -55,11 +54,11 @@ class Logger:
 
         # Make horizontal grid from image tensor
         horizontal_grid = vutils.make_grid(
-            images, normalize=normalize, scale_each=True)
+            images, normalize=normalize, scale_each=False)
         # Make vertical grid from image tensor
         nrows = int(np.sqrt(num_images))
         grid = vutils.make_grid(
-            images, nrow=nrows, normalize=True, scale_each=True)
+            images, nrow=nrows, normalize=True, scale_each=False)
 
         # Add horizontal images to tensorboard
         self.writer.add_image(img_name, horizontal_grid, step)
@@ -71,27 +70,8 @@ class Logger:
         out_dir = './data/images/{}'.format(self.data_subdir)
         Logger._make_dir(out_dir)
 
-        # Plot and save horizontal
-        #fig = plt.figure(figsize=(156, 109))
-        #plt.imshow(np.moveaxis(horizontal_grid.numpy(), 0, -1))
-        #plt.axis('off')
-        #if plot_horizontal:
-        #    display.display(plt.gcf())
-        #self._save_images(fig, epoch, n_batch, 'hori')
-        #plt.close()
-
-        # Save squared
-        fig = plt.figure()
-        plt.imshow(np.moveaxis(grid.numpy(), 0, -1))
-        plt.axis('off')
-        self._save_images(fig, epoch, n_batch)
-        plt.close()
-
-    def _save_images(self, fig, epoch, n_batch, comment=''):
-        out_dir = './data/images/{}'.format(self.data_subdir)
-        Logger._make_dir(out_dir)
-        fig.savefig('{}/{}_epoch_{}_batch_{}.png'.format(out_dir,
-                                                         comment, epoch, n_batch))
+        vutils.save_image(horizontal_grid, '{}/{}_epoch_{}_batch_{}.png'.format(out_dir, 'hori', epoch, n_batch), normalize=True)
+        vutils.save_image(grid, '{}/{}_epoch_{}_batch_{}.png'.format(out_dir, '', epoch, n_batch), normalize=True)
 
     def display_status(self, epoch, num_epochs, n_batch, num_batches, d_error, g_error, d_pred_real, d_pred_fake):
         

@@ -4,8 +4,9 @@ Dataset not provided for legal reasons. Example in this file are results of GANs
 
 [Check out this blog post](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f) for an introduction to Generative Networks. 
 
+<img src=".images/z9-all.png" width="814">
 
-<img src=".images/conv.gif" width="432">
+<img src=".images/conv.gif" width="240">
 
 ## Lin-GANART
 Simple GAN composed of two perceptrons.
@@ -13,9 +14,9 @@ Simple GAN composed of two perceptrons.
 <img src=".images/five-linear.png" width="1300">
 
 ## GANART (wip)
-Deep Convolutional Generative Adversarial Network (DCGANs)
+GAN composed of two Deep Convolutional Networks.
 
-<img src=".images/16.png" width="432">
+<img src=".images/small-sample.png" width="600">
 
 
 ## GANART-load
