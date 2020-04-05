@@ -4,6 +4,7 @@ Dataset not provided for legal reasons. Example in this file are results of GANs
 
 [Check out this blog post](https://medium.com/ai-society/gans-from-scratch-1-a-deep-introduction-with-code-in-pytorch-and-tensorflow-cb03cdcdba0f) for an introduction to Generative Networks. 
 
+Generated full set of basic lands:
 <img src=".images/z9-all.png" width="814">
 
 <img src=".images/conv.gif" width="240">
