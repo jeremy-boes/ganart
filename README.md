@@ -18,7 +18,7 @@ Simple GAN composed of two perceptrons.
 Unrolled DCGAN
 
 Sample result trained on all lands
-<img src=".images/small-sample.png" width="600">
+<img src=".images/small_sample.png" width="600">
 
 #### Previous versions selected results
 
