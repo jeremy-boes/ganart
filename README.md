@@ -21,7 +21,7 @@ Sample result trained on all lands
 
 <img src=".images/small_sample.png" width="600">
 
-### Previous versions selected results
+### Selected results from previous versions
 
 Standard DCGAN trained on basic lands only
 <img src=".images/z9-all.png" width="814">
