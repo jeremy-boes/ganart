@@ -1,0 +1,40 @@
+Hello! I thought other people might be interested in using and extending this code, so I wanted to write a brief section
+on how it works. The goal of this is to create a high level overview that explains how to get the code running and look
+at the outputs. There will be no advice on optimising the neural net (since I'm still working on that...).
+
+What is happening?
+This is using a Generative Adversarial Neural Network (GAN) to create images, specifically aimed at making Magic card
+art. A GAN trains up two systems: a discriminator and a generator. The generator tries to create new art that fools the
+discriminator; the discriminator tries to identify the fake images and separates them from the real ones. The two
+playing off each other creates better results over the long term, much like playing Magic with your friends makes you
+better over time.
+
+How do I get data?
+The easiest way to gather data would be to use a source like Scryfall and search for images of basic lands or elves or
+whatever you want to generate and save each image to a folder on your computer. Afterwards, you can run CropData.py on
+that folder and generate just the art. One note is that you may want to change the crop box (I did it rather quickly) or
+create another version of the code for old border cards. This is something that may be added in an update.
+
+How do I use this?
+The main file to use is GANART.py. Point the data path variable (line 18) at your data, and let it run! You'll be
+producing images in no time. IMPORTANT NOTE: the code seems to expect a folder with subfolders as your data path. As far
+as I can tell, the subfolders don't do anything (it would be needed for classification, not generation). I just created
+one sub-folder and put all my data there. So my data path variable is pointing to a folder which contains one folder,
+which contains images.
+
+What are the other parameters?
+* The batch size says how many elements of the training set to use at a time. A larger batch size will take more RAM and
+run faster.
+* The resize value is used to resize the input images. It transforms the smaller edge of the image to be the resize value,
+and scales the larger edge appropriately. This is so that if you input a large image, it gets shrunk down to the size
+the neural network is expected.
+* Num epochs is how many iterations of the neural network will be run.
+* Kernel_s and stride_s define the down select convolution. The kernel defines how many pixels to convolve, and the
+stride determines how many pixes to move before doing another convolution.
+
+Now that I've run my code, where can I see outputs?
+Outputs are written to a data folder in the same directory as the code, then images/DConv-GConv-GANART. They will be
+overriden if the code is run again.
+
+How can I run a previously generated model?
+Use Generate.py and change the "model_to_use" parameter. Output from this run will be saved to data/images/loaded-GANART
