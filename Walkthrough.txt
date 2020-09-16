@@ -10,17 +10,16 @@ playing off each other creates better results over the long term, much like play
 better over time.
 
 How do I get data?
-The easiest way to gather data would be to use a source like Scryfall and search for images of basic lands or elves or
+The easiest way to gather data would be to use a source like Scryfall and search for images of lands or elves or
 whatever you want to generate and save each image to a folder on your computer. Afterwards, you can run CropData.py on
 that folder and generate just the art. One note is that you may want to change the crop box (I did it rather quickly) or
 create another version of the code for old border cards. This is something that may be added in an update.
+Note that the code has been optimized for lands and is unlikely to work well out of the box on other use cases.
 
 How do I use this?
-The main file to use is GANART.py. Point the data path variable (line 18) at your data, and let it run! You'll be
-producing images in no time. IMPORTANT NOTE: the code seems to expect a folder with subfolders as your data path. As far
-as I can tell, the subfolders don't do anything (it would be needed for classification, not generation). I just created
-one sub-folder and put all my data there. So my data path variable is pointing to a folder which contains one folder,
-which contains images.
+The main file to use is GANART.py. Point the data path variable at your data, and let it run. An important note is that
+the code expects a folder with subfolders as your data path. You can just put one subfolder in there, but it's good
+practice (and useful for future work) to seperate the data by types. For example: seperating lands by type.
 
 What are the other parameters?
 * The batch size says how many elements of the training set to use at a time. A larger batch size will take more RAM and
