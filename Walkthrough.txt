@@ -1,6 +1,6 @@
 Hello! I thought other people might be interested in using and extending this code, so I wanted to write a brief section
 on how it works. The goal of this is to create a high level overview that explains how to get the code running and look
-at the outputs. There will be no advice on optimising the neural net (since I'm still working on that...).
+at the outputs. There will be no advice on optimising the neural net.
 
 What is happening?
 This is using a Generative Adversarial Neural Network (GAN) to create images, specifically aimed at making Magic card
@@ -12,7 +12,7 @@ better over time.
 How do I get data?
 The easiest way to gather data would be to use a source like Scryfall and search for images of lands or elves or
 whatever you want to generate and save each image to a folder on your computer. Afterwards, you can run CropData.py on
-that folder and generate just the art. One note is that you may want to change the crop box (I did it rather quickly) or
+that folder and generate just the art. One note is that you may want to change the crop box or
 create another version of the code for old border cards. This is something that may be added in an update.
 Note that the code has been optimized for lands and is unlikely to work well out of the box on other use cases.
 
@@ -22,8 +22,7 @@ the code expects a folder with subfolders as your data path. You can just put on
 practice (and useful for future work) to seperate the data by types. For example: seperating lands by type.
 
 What are the other parameters?
-* The batch size says how many elements of the training set to use at a time. A larger batch size will take more RAM and
-run faster.
+* The batch size says how many elements of the training set to use at a time for training. A general rule is to use 64.
 * The resize value is used to resize the input images. It transforms the smaller edge of the image to be the resize value,
 and scales the larger edge appropriately. This is so that if you input a large image, it gets shrunk down to the size
 the neural network is expected.
