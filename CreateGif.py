@@ -1,5 +1,9 @@
 import os
 import re
+import subprocess
+import sys
+
+subprocess.check_call([sys.executable, "-m", "pip", "install", "imageio"])
 
 import imageio
 
